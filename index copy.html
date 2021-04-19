@@ -9,16 +9,16 @@
     <script src="https://kit.fontawesome.com/e0d7e898b5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fontawesome.com/icons/shopping-bag?style=solid">
    
+    <script src="panier.js" async> </script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script src="panier.js" > </script>
+   
 
     <title>ZinaStore</title>
 </head>
 <body>
     
-
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="index copy.html">
             <img src="image/logo_zina_blanc-removebg-preview.png"> </a>
@@ -201,7 +201,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="monpanier" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">ZinasStore</h5>
@@ -210,33 +210,27 @@
         </button>
       </div>
       <div class="modal-body">
-
-        <div class="row mt-3 ">
-            <div class="col-md-3">
-              <strong>Item</strong>
-            </div>
-            <div class="col-md-2">
-              <strong>Name</strong>
-            </div>
-            <div class="col-md-3">
-              <strong>Price</strong>
-            </div>
-            <div class="col-md-2">
-              <strong>Quantity</strong>
-            </div>
-            <div class="col-md-2">
-            </div>
+        <section class="container content-section">
+          <div class="cart-row mb-3">
+              <span class=" cart-column ">Article</span>
+              <span class=" cart-column prix">Prix</span>
+              <span class=" cart-column qte">	Quantité</span>
+              
           </div>
-
-          <div class="item-card">
-
-
+          <div class="cart-items">
+            
           </div>
-          <!--Remplir la classe total par le total de panier via le fichier script.js -->
-          <div class="total"></div>
-
-    </div>
-  
+          <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price total">0 TND</span>
+        </div>
+      </section>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark btn-purchase">Vider la panier</button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Poursuire mes achats</button>
+       
+      </div>
+   
     </div>
   </div>
 </div>
@@ -262,7 +256,7 @@
      <!-- Section: Categorie -->
      <div class="filter mx-5">
 
-       <h5 class="font-weight-bold mb-4">Filtrer par catégorie</h5>
+       <h6 class="mb-4">Filtrer par catégorie</h6>
  
        <div class="form-check pl-0 mb-3">
          <input type="checkbox" name="fl-catégorie" class="form-check-input filled-in" >
@@ -284,7 +278,7 @@
            <input type="checkbox" class="form-check-input filled-in" >
            <label class="form-check-label  card-link-secondary" for="renewed">Cadeaux</label>
          </div>
-         <h5 class="font-weight-bold mb-3">Filtrer par prix</h5>
+         <h6 class="mb-3">Filtrer par prix</h6>
 
          <div class="form-check pl-0 mb-3">
            <input type="radio"  name="fl-prix" value="under50" id="under50" class="form-check-input" >
@@ -318,7 +312,7 @@
                                     </a>
                                     <ul class="product-links">
                                         <li><a class="add-favoris" data-tip="Ajouter aux favoris"><i class="fas fa-heart"></i></a></li>
-                                        <li><a class="add-cart" data-tip="Acheter"><i class="fas fa-cart-plus"></i></a></li>
+                                        <li><a data-tip="Acheter"><i class="fas fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="product-content justify-content-center">
@@ -331,8 +325,7 @@
                                 </ul>
                                     <h3 class="title"><a href="#"></a> bague emeraude</a></h3>
                                     <div class="price">1000.00 TDN</div>
-                                    <a class="add-to-cart add-cart" href="#" >add to cart
-
+                                    <a class="add-to-cart" href="#" >add to cart
                                     </a>
                                 </div>
                                 </div> 
@@ -358,7 +351,7 @@
                                             </ul>
                                             <h3 class="title"><a href="#"></a> Bracelets</a></h3>
                                             <div class="price"> 100 TDN</div>
-                                            <a class="add-to-cart add-cart" href="#" >add to cart</a>
+                                            <a class="add-to-cart" href="#" >add to cart</a>
                                         </div>
                                         </div> 
                                    </div>
@@ -384,7 +377,7 @@
                                             </ul>
                                             <h3 class="title"><a href="#"></a> Boucles d'oreilles</a></h3>
                                             <div class="price">400.000 DTN</div>
-                                            <a class="add-to-cart add-cart" href="#">add to cart</a>
+                                            <a class="add-to-cart" href="#">add to cart</a>
                                         </div>
                                         </div> 
                                    </div>
@@ -414,7 +407,7 @@
                                 </ul>
                                 <h3 class="title"><a href="#"></a> Montre femme</a></h3>
                                 <div class="price">160.000 TDN</div>
-                                <a class="add-to-cart add-cart" href="#">add to cart</a>
+                                <a class="add-to-cart" href="#">add to cart</a>
                             </div>
                             </div> 
                                 </div>
@@ -442,7 +435,7 @@
                                   </ul>
                                   <h3 class="title"><a href="#"></a> Collier</a></h3>
                                   <div class="price">100.00 TDN</div>
-                                  <a class="add-to-cart add-cart" href="#">add to cart</a>
+                                  <a class="add-to-cart " href="#">add to cart</a>
                               </div>
                               </div> 
                                 </div>
@@ -470,7 +463,7 @@
                                         </ul>
                                         <h3 class="title"><a href="#"></a> Bague </a></h3>
                                         <div class="price"> 300.00 TDN</div>
-                                        <a class="add-to-cart add-cart" href="#">add to cart</a>
+                                        <a class="add-to-cart " href="#">add to cart</a>
                                     </div>
                                     </div> 
                                       </div>
@@ -486,25 +479,25 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-3 col-12">
  <img src="image/logoblack.png" class="logofooter mb-2" alt="">
- <h5 class="pt-2"> ZinaStore votre meilleur boutique de vente d' accessoires en ligne </h5>     
+ <p class="pt-2"> ZinaStore votre meilleur boutique de vente d' accessoires en ligne </p>     
     </div>
     <div class="col-md-1">
 
     </div>
     <div class="col-md-4 col-12">
-<h4> Liens utiles</h4>
-<a href=""> <h5> Nouveaux produits</h5> </a>
- <a  href=""> <h5> Nos offres</h5> </a>
- <a  href=""> <h5> Boutique</h5> </a>
+<h5> Liens utiles</h5>
+<a href=""> <h6> Nouveaux produits</h6> </a>
+ <a  href=""> <h6> Nos offres</h6> </a>
+ <a  href=""> <h6> Boutique</h6> </a>
 
-<a  href="panier.html"> <h5> Mon panier</h5> </a>
+<a  href="panier.html"> <h6> Mon panier</h6> </a>
 
     </div>
 
     <div class="col-md-4 col-12">
 
-      <h4> Newsletter </h4>
-      <h5>  Rejoignez-nous</h5>
+      <h5> Newsletter </h5>
+      <h6>  Rejoignez-nous</h6>
       <div class="row">
       <div class="col-12">
       <div class="input-group mt-3">
@@ -517,7 +510,7 @@
   
   </div>
   <div class="footer-social-link mt-5 col-12 d-flex ">
-    <h5 class="mb-5"> Suivez-nous </h5>
+    <h6 class="mb-5"> Suivez-nous </h6>
 
   <ul class="d-flex justify-content-center">
       <li>
@@ -553,14 +546,13 @@
 
 <hr color="white">
 <div class="text-center">
-<h5>  <a href="index copy.html">  ZinaStore </a> © Copyright 2021
-</h5>
+<h6>  <a href="index copy.html" style="color:var(--doré)">  ZinaStore </a> © Copyright 2021
+</h6>
 </div>
 </div>
 </footer>
-
- 
-<script src="panier.js" > </script>
+      <script src="icone.js"> </script>
+     <script src="themedark.js"> </script>
       <link rel="stylesheet" href="js/bootstrap.js">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
